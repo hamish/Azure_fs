@@ -29,9 +29,11 @@ REM Azure provides MSBUILD_PATH and DEPLOYMENT_TARGET.
 REM If we're not deploying to Azure (eg. building locally),
 REM we need to set MSBUILD_PATH.
 if "%MSBUILD_PATH%" == "" (
+  echo Setting Build Path
   set MSBUILD_PATH="%ProgramFiles(x86)%\MSBuild\12.0\Bin\MSBuild.exe"
 )
 
+echo %MSBUILD_PATH% /p:Configuration=Release
 %MSBUILD_PATH% /p:Configuration=Release
 
 if not %ERRORLEVEL% == 0 (
