@@ -34,7 +34,7 @@ if "%MSBUILD_PATH%" == "" (
 )
 
 echo %MSBUILD_PATH% /p:Configuration=Release
-"%MSBUILD_PATH% /p:Configuration=Release"
+"%MSBUILD_PATH%" /p:Configuration=Release
 
 if not %ERRORLEVEL% == 0 (
   echo ====== Build failed. ======
